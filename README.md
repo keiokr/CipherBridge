@@ -1,5 +1,4 @@
-# CipherBridgeV22
-CipherBridgeV22
+
 # CipherBridge明文桥接
 CipherBridge明文桥接
 
