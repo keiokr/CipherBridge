@@ -8,15 +8,16 @@ CipherBridge明文桥接
 2、然后 baseurl设置为加密解密目标站点<br>
 3、CipherBridge 设置本机ip（192.168.2.101），不要设置127.0.0.1<br>
 4、Burpsuite可以是本机 也可以是你局域网其他机器ip(192.168.2.108），不要设置127.0.0.1<br>
+
 <img width="1570" height="844" alt="image" src="https://github.com/user-attachments/assets/9073fa70-f086-49b5-a46e-416096f1b314" /><br>
 <img width="1594" height="1055" alt="image" src="https://github.com/user-attachments/assets/5fb34332-d6e7-4c00-8ceb-68d6739d5683" /><br>
 
-⦁	burpsuite设置<br>
+ burpsuite设置<br>
 
-1)	burp监听 8080<br>
-2)	burp设置上游代理设置192.168.2.101:8081, CipherBridge的8081端口 （加密端口）<br>
+1)	 burp监听 8080<br>
+2)	 burp设置上游代理设置192.168.2.101:8081, CipherBridge的8081端口 （加密端口）<br>
 3)	如果浏览器操作的话，就设置192.168.2.101:8083, CipherBridge的8083端口 （解密端口），浏览器操作全部burp里面明文显示，因为经过（解密端）所以burp里面全部都是明文。<br>
-4)直接操作burpsuite 里面明文，因为经过（加密端），所以明文提交都是经过加密能正常被目标识别。然后返回会经过解密，所以burp响应包全部也是明文显示。<br>
+4) 直接操作burpsuite 里面明文，因为经过（加密端），所以明文提交都是经过加密能正常被目标识别。然后返回会经过解密，所以burp响应包全部也是明文显示。<br>
  <br>
  
 # ai适配CipherBridge生成完整且正确plugin.py文件提示词skills。
