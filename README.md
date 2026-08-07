@@ -7,8 +7,7 @@ CipherBridge明文桥接
 1、你先用ai写好 plugin.py<br>
 2、然后 baseurl设置为加密解密目标站点<br>
 3、CipherBridge 设置本机ip（192.168.2.101），不要设置127.0.0.1<br>
-4)	Burpsuite可以是本机 也可以是你局域网其他机器ip(192.168.2.108），<br>
-不要设置127.0.0.1<br>
+4)	Burpsuite可以是本机 也可以是你局域网其他机器ip(192.168.2.108），不要设置127.0.0.1<br>
 <img width="1570" height="844" alt="image" src="https://github.com/user-attachments/assets/9073fa70-f086-49b5-a46e-416096f1b314" /><br>
 <img width="1594" height="1055" alt="image" src="https://github.com/user-attachments/assets/5fb34332-d6e7-4c00-8ceb-68d6739d5683" /><br>
 
