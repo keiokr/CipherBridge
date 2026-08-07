@@ -12,6 +12,7 @@ CipherBridge明文桥接
 <img width="1594" height="1055" alt="image" src="https://github.com/user-attachments/assets/5fb34332-d6e7-4c00-8ceb-68d6739d5683" /><br>
 
 ⦁	burpsuite设置<br>
+
 1)	burp监听 8080<br>
 2)	burp设置上游代理设置 CipherBridge的8081端口 （加密端口）<br>
 3)	如果浏览器操作的话，就设置<br> CipherBridge的8083端口 （解密端口），浏览器操作全部burp里面明文显示，因为经过（解密端）所以burp里面全部都是明文。<br>
