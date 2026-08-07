@@ -13,12 +13,9 @@ CipherBridge明文桥接
 
 ⦁	burpsuite设置<br>
 1)	burp监听 8080<br>
-<br>
 2)	burp设置上游代理设置 CipherBridge的8081端口 （加密端口）<br>
-<br>
-3)	如果浏览器操作的话，就设置<br> CipherBridge的8083端口 （解密端口），浏览器操作全部burp里面明文显示，因为经过（解密端）所以burp里面全部都是明文。
-<br>
-4)直接操作burpsuite 里面明文，因为经过（加密端），所以明文提交都是经过加密能正常被目标识别。然后返回会经过解密，所以burp响应包全部也是明文显示。
+3)	如果浏览器操作的话，就设置<br> CipherBridge的8083端口 （解密端口），浏览器操作全部burp里面明文显示，因为经过（解密端）所以burp里面全部都是明文。<br>
+4)直接操作burpsuite 里面明文，因为经过（加密端），所以明文提交都是经过加密能正常被目标识别。然后返回会经过解密，所以burp响应包全部也是明文显示。<br>
  <br>
  
 # ai适配CipherBridge生成完整且正确plugin.py文件提示词skills。
