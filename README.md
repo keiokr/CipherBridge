@@ -9,26 +9,24 @@ CipherBridge明文桥接
 3、CipherBridge 设置本机ip（192.168.2.101），不要设置127.0.0.1<br>
 4)	Burpsuite可以是本机 也可以是你局域网其他机器ip(192.168.2.108），<br>
 不要设置127.0.0.1<br>
- <img width="1389" height="685" alt="image" src="https://github.com/user-attachments/assets/ea4040a8-2da8-4273-ac9f-18611413e154" />
 
-<img width="1585" height="1010" alt="image" src="https://github.com/user-attachments/assets/4b4dc20f-2247-4fe1-a86f-f7e83e248b3b" />
 
 
 ⦁	burpsuite设置<br>
 1)	burp监听 8080<br>
- <img width="1370" height="600" alt="image" src="https://github.com/user-attachments/assets/f25b6b54-c94d-4a64-867f-1ba780158fa4" />
+
 <br>
 1)	burp设置上有代理设置 CipherBridge的8081端口 （加密端口）<br>
- <img width="1379" height="610" alt="image" src="https://github.com/user-attachments/assets/dd2fa954-4cb8-4633-91ae-0e002ebc76ea" />
+
 <br>
 ⦁	浏览器设置<br>
  CipherBridge的8083端口 （解密端口）<br>
 
 
- <img width="1336" height="424" alt="image" src="https://github.com/user-attachments/assets/42db4f79-b31f-4f27-94bd-4384109bc6b8" /><br>
+
 浏览器操作全部burp里面明文显示，因为经过（解密端）所以burp里面全部都是明文。
 <br>
-<img width="1060" height="759" alt="image" src="https://github.com/user-attachments/assets/3fdd162c-6dde-47c4-867e-71623a399e14" />
+
 <br>
 直接操作burpsuite 里面明文，因为经过（加密端），所以明文提交都是经过加密能正常被目标识别。然后返回会经过解密，所以burp响应包全部也是明文显示。
  <br>
