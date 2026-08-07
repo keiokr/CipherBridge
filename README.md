@@ -10,8 +10,6 @@ CipherBridge明文桥接
 4)	Burpsuite可以是本机 也可以是你局域网其他机器ip(192.168.2.108），<br>
 不要设置127.0.0.1<br>
 
-
-
 ⦁	burpsuite设置<br>
 1)	burp监听 8080<br>
 
