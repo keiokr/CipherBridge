@@ -19,10 +19,7 @@ CipherBridge明文桥接
 1)	burp设置上有代理设置 CipherBridge的8081端口 （加密端口）<br>
 
 <br>
-⦁	浏览器设置<br>
- CipherBridge的8083端口 （解密端口）<br>
-
-
+⦁如果浏览器操作的话，就设置<br> CipherBridge的8083端口 （解密端口）<br>
 
 浏览器操作全部burp里面明文显示，因为经过（解密端）所以burp里面全部都是明文。
 <br>
