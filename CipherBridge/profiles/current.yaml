@@ -1,0 +1,19 @@
+name: current
+plugin: current
+roles:
+- decrypt
+- encrypt
+baseurl: http://10.100.17.11:8088
+match:
+  host:
+  - 10.100.17.11
+  path:
+  - '*'
+  methods:
+  - GET
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
+  - OPTIONS
+  skip_static: true
