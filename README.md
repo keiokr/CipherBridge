@@ -34,9 +34,9 @@
 
 ## 端口/用法
 
-1、Burp 监听在 Burp IP 的 <b>8080</b>，尽可能都明文显示。
-2、Burp 的上游代理设置为 CipherBridge IP 的 <b>8081</b>，也就是 encrypt 加密端，用于加密后提交给目标服务器。
-3、浏览器代理设置为 CipherBridge IP 的 <b>8083</b>，也就是 decrypt 解密端；登录或访问页面后，decrypt 自动解密并交给 Burp 明文。
+1、Burp 监听在 Burp IP 的 <b>8080</b>，尽可能都明文显示。不要设置127.0.0.1<br>
+2、Burp 的上游代理设置为 CipherBridge IP 的 <b>8081</b>，也就是 encrypt 加密端，用于加密后提交给目标服务器。不要设置127.0.0.1<br>
+3、浏览器代理设置为 CipherBridge IP 的 <b>8083</b>，也就是 decrypt 解密端；登录或访问页面后，decrypt 自动解密并交给 Burp 明文。不要设置127.0.0.1<br>
 4、操作 burpsuite，修改明文后经 encrypt 加密提交给目标服务器，方便调用插件自动化检测和手动明文测试。
 
 请求链路：
