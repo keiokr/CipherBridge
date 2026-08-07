@@ -1,6 +1,6 @@
 
 # CipherBridge明文桥接
-CipherBridge明文桥接
+
 
 一、软件设置<br>
 1、你先用ai写好 plugin.py<br>
