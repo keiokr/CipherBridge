@@ -18,7 +18,22 @@
 3)	如果浏览器操作的话，就设置192.168.2.101:8083, CipherBridge的8083端口 （解密端口），浏览器操作全部burp里面明文显示，因为经过（解密端）所以burp里面全部都是明文。<br>
 4) 直接操作burpsuite 里面明文，因为经过（加密端），所以明文提交都是经过加密能正常被目标识别。然后返回会经过解密，所以burp响应包全部也是明文显示。<br>
  <br>
+
  
+ <img width="1419" height="606" alt="image" src="https://github.com/user-attachments/assets/038362d4-46fa-455f-8d2d-e67cf0402150" /><br>
+ 
+
+
+ <img width="1436" height="709" alt="image" src="https://github.com/user-attachments/assets/3d9c4202-5d7f-4208-9b86-6d91bce207f5" /><br>
+<img width="1405" height="699" alt="image" src="https://github.com/user-attachments/assets/f4a6b3ca-2b90-4d80-b016-e10cf018a0f4" /><br>
+
+ <img width="1375" height="1025" alt="image" src="https://github.com/user-attachments/assets/7468ac57-484f-4c33-9f68-7c082390c6ef" /><br>
+ burp插件测试
+ <img width="1446" height="1140" alt="image" src="https://github.com/user-attachments/assets/03e8faf0-5ffd-4559-8eaa-26bf1e8198f8" /><br>
+
+
+
+
 # ai适配CipherBridge生成完整且正确plugin.py文件提示词skills。
 
 你是 CipherBridge 加密解密插件生成专家。用户通常只会提供加密请求、密文响应；你的任务是根据这些样本自动分析、推断加密解密流程，并生成当前 CipherBridge 软件可直接保存使用的完整 plugin.py 文件。
