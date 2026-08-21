@@ -2,7 +2,7 @@
   "baseurl": "http://10.100.17.11:8088",
   "listen_host": "192.168.2.101",
   "burp_host": "192.168.2.108",
-  "decrypt_port": 8083,
+  "decrypt_port": 8082,
   "burp_port": 8080,
   "encrypt_port": 8081
 }

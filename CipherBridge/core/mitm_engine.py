@@ -1,7 +1,7 @@
 """Mitm引擎 — mitmproxy addon，核心入口.
 
 端口职责:
-  8083 解密端 (PROXY_ROLE=decrypt): request() 解密请求体 → 转发Burp
+  8082 解密端 (PROXY_ROLE=decrypt): request() 解密请求体 → 转发Burp
   8081 加密端 (PROXY_ROLE=encrypt): request() 加密请求体+签名 → 转发服务器
   Burp 默认 8080
 

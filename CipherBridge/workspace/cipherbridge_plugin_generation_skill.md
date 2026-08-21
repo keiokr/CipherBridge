@@ -15,14 +15,14 @@
 
 1、burpsuite 监听 Burp IP:8080，尽可能都明文显示。
 2、burpsuite 上游代理设置为 CipherBridge IP:8081，也就是 encrypt 加密端，用于加密后提交给目标服务器。
-3、浏览器代理设置为 CipherBridge IP:8083，也就是 decrypt 解密端；登录或访问页面后，decrypt 自动解密并交给 burpsuite 明文。
+3、浏览器代理设置为 CipherBridge IP:8082，也就是 decrypt 解密端；登录或访问页面后，decrypt 自动解密并交给 burpsuite 明文。
 4、操作 burpsuite，修改明文后经 encrypt 加密提交给目标服务器，方便调用插件自动化检测和手动明文测试。
 
 请求链路：
-浏览器 -> CipherBridge IP:8083 decrypt -> Burp IP:8080 Burp 明文 -> CipherBridge IP:8081 encrypt -> 目标服务器
+浏览器 -> CipherBridge IP:8082 decrypt -> Burp IP:8080 Burp 明文 -> CipherBridge IP:8081 encrypt -> 目标服务器
 
 响应链路：
-目标服务器 -> CipherBridge IP:8081 encrypt -> Burp IP:8080 Burp 明文 -> CipherBridge IP:8083 decrypt -> 浏览器
+目标服务器 -> CipherBridge IP:8081 encrypt -> Burp IP:8080 Burp 明文 -> CipherBridge IP:8082 decrypt -> 浏览器
 
 ## 处理范围
 

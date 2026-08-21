@@ -221,7 +221,7 @@ def load_state() -> dict:
             "baseurl": "",
             "listen_host": default_listen_host,
             "burp_host": default_listen_host,
-            "decrypt_port": 8083,
+            "decrypt_port": 8082,
             "burp_port": 8080,
             "encrypt_port": 8081,
         },
@@ -504,14 +504,14 @@ CIPHERBRIDGE_PLUGIN_SKILL_TEXT = """# ai适配CipherBridge生成完整且正确p
 
 1、Burp 监听在 Burp IP 的 <b>8080</b>，尽可能都明文显示。
 2、Burp 的上游代理设置为 CipherBridge IP 的 <b>8081</b>，也就是 encrypt 加密端，用于加密后提交给目标服务器。
-3、浏览器代理设置为 CipherBridge IP 的 <b>8083</b>，也就是 decrypt 解密端；登录或访问页面后，decrypt 自动解密并交给 Burp 明文。
+3、浏览器代理设置为 CipherBridge IP 的 <b>8082</b>，也就是 decrypt 解密端；登录或访问页面后，decrypt 自动解密并交给 Burp 明文。
 4、操作 burpsuite，修改明文后经 encrypt 加密提交给目标服务器，方便调用插件自动化检测和手动明文测试。
 
 请求链路：
-浏览器 -> 本机IP:8083 decrypt -> 本机IP:8080 Burp 明文 -> 本机IP:8081 encrypt -> 目标服务器
+浏览器 -> 本机IP:8082 decrypt -> 本机IP:8080 Burp 明文 -> 本机IP:8081 encrypt -> 目标服务器
 
 响应链路：
-目标服务器 -> 本机IP:8081 encrypt -> 本机IP:8080 Burp 明文 -> 本机IP:8083 decrypt -> 浏览器
+目标服务器 -> 本机IP:8081 encrypt -> 本机IP:8080 Burp 明文 -> 本机IP:8082 decrypt -> 浏览器
 
 ## 处理范围
 
@@ -634,12 +634,12 @@ class AIGeneratorTab(QWidget):
             "<p style='margin:0 0 6px 0;'>"
             "1、burpsuite 监听本机IP: <b>8080</b>，尽可能都明文显示。<br>"
             "2、burpsuite 上游代理设置为本机IP: <b>8081</b>，也就是 <b>encrypt 加密端</b>，加密提交给目标服务器。<br>"
-            "3、操作浏览器，代理设置为本机IP: <b>8083</b>，也就是 <b>decrypt 解密端</b>；登录或页面后自动交给 burpsuite 明文。<br>"
+            "3、操作浏览器，代理设置为本机IP: <b>8082</b>，也就是 <b>decrypt 解密端</b>；登录或页面后自动交给 burpsuite 明文。<br>"
             "4、操作 burpsuite ，明文修改后加密提交给目标服务器，方便调用插件自动化检测和手动明文测试。"
             "</p>"
             "<p style='margin:8px 0 0 0;'>"
-            "<b>请求链路：</b> 浏览器 → CipherBridge IP:8083 decrypt → Burp IP:8080 Burp 明文 → CipherBridge IP:8081 encrypt → 目标服务器<br>"
-            "<b>响应链路：</b> 目标服务器 → CipherBridge IP:8081 encrypt → Burp IP:8080 Burp 明文 → CipherBridge IP:8083 decrypt → 浏览器"
+            "<b>请求链路：</b> 浏览器 → CipherBridge IP:8082 decrypt → Burp IP:8080 Burp 明文 → CipherBridge IP:8081 encrypt → 目标服务器<br>"
+            "<b>响应链路：</b> 目标服务器 → CipherBridge IP:8081 encrypt → Burp IP:8080 Burp 明文 → CipherBridge IP:8082 decrypt → 浏览器"
             "</p>"
             "</div>"
         )
@@ -907,7 +907,7 @@ class MainWindow(QMainWindow):
         group.setToolTip(
             "Burp 放在中间：\n"
             "1. Proxy Listener 监听 Burp IP 上的此端口，接收 decrypt 发来的明文。\n"
-            "2. Burp 的 Upstream Proxy 必须指向 CipherBridge IP 的 encrypt 端口 8081，而不是 decrypt 端口 8083。"
+            "2. Burp 的 Upstream Proxy 必须指向 CipherBridge IP 的 encrypt 端口 8081，而不是 decrypt 端口 8082。"
         )
         layout.addWidget(QLabel("监听端口:"))
         layout.addWidget(self.burp_port)
@@ -944,7 +944,7 @@ class MainWindow(QMainWindow):
         self.baseurl_edit.setText(self.state.get("baseurl", ""))
         self.listen_host_edit.setText(self.state.get("listen_host") or detect_local_ipv4())
         self.burp_host_edit.setText(self.state.get("burp_host") or self.state.get("listen_host") or detect_local_ipv4())
-        self.decrypt_port.setValue(int(self.state.get("decrypt_port", 8083)))
+        self.decrypt_port.setValue(int(self.state.get("decrypt_port", 8082)))
         self.burp_port.setValue(int(self.state.get("burp_port", 8080)))
         self.encrypt_port.setValue(int(self.state.get("encrypt_port", 8081)))
 
