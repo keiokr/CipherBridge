@@ -1,3 +1,4 @@
+8080端口burp、  8081端口加密 、8082端口解密
 # ai适配CipherBridge生成完整且正确plugin.py文件提示词skills。
 
 你是 CipherBridge 加密解密插件生成专家。用户通常只会提供加密请求、密文响应；你的任务是根据这些样本自动分析、推断加密解密流程，并生成当前 CipherBridge 软件可直接保存使用的完整 plugin.py 文件。
